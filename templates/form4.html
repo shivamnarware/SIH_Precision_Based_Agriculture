@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css">
+  
+</head>
+<body>
+ <!-- NAVBAR
+================================================== -->
+  <body>
+    <!--<div class="navbar-wrapper">-->
+      <!--<div class="container" >-->
+
+        <nav class="navbar navbar-inverse navbar-static-top" style="background-color:#08041A; font-weight:700;color:#ffffff;" >
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Technofarmacists</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li ><a href="https://b5a2a3122f6e4ceaa3fa6e82bb77fe8e.vfs.cloud9.us-east-2.amazonaws.com/home">Home</a></li>
+                <li><a href="https://b5a2a3122f6e4ceaa3fa6e82bb77fe8e.vfs.cloud9.us-east-2.amazonaws.com/home/about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/home/comments">Question You May ask</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                  </ul>
+                </li>
+              </ul>
+                    <ul class="nav navbar-nav navbar-right" style="padding-right: 25px">
+                 
+                        <li> <a href='https://b5a2a3122f6e4ceaa3fa6e82bb77fe8e.vfs.cloud9.us-east-2.amazonaws.com/login'>Login</a></li>
+                        <li> <a href='https://b5a2a3122f6e4ceaa3fa6e82bb77fe8e.vfs.cloud9.us-east-2.amazonaws.com/register'>Sign Up</a></li>
+                     
+                      
+                
+               </ul>
+            </div>
+                <div class="collapse navbar-collapse" id="bs-nav-demo">
+
+    </div><!-- /.navbar-collapse -->
+          </div>
+        </nav>
+      <!--</div>-->
+    <!--</div>-->
+
+
+
+
+
+
+
+<div class="ui main text container segment">
+   <div class="ui huge header">Add the values for the Crop Type Detection section</div>
+   <form class="ui form" action="{{ url_for('predict4')}}"  method="POST" >
+       <div class="field">
+           <label>pH Level</label>
+           <input type="text" name="PH" placeholder="Text" required >
+       </div>
+
+        <div class="field">
+           <label>Nitrogen Content (g)</label>
+           <input type="text" name="nitrogen" placeholder="Text"required >
+       </div>
+        <div class="field">
+           <label>Phosphorus Content (g)</label>
+           <input type="text" name="phosphorus" placeholder="Text"required >
+       </div>
+       <div class="field">
+           <label>Potassium Content (g)</label>
+           <input type="text" name="potassium" placeholder="Text"required >
+       </div>
+       <div class="field">
+           <label>Organic Carbon (% i.e, 20%=.20)</label>
+           <input type="text" name="OC" placeholder="Text"required >
+       </div>
+       <div class="field">
+           <label>Particles(mm)</label>
+           <input type="text" name="Particles" placeholder="Text" required>
+       </div>      
+       <div class="field">
+           <label>Water_holding_content(quarts of water per cubic foot)</label>
+           <input type="text" name="WaterHoldingContent" placeholder="Text"required >
+       </div>       
+       <div class="field">
+           <label>Soil Type(for 'clay': 1, 'Sandy': 2, 'loamy': 3)</label>
+           <select type="text" name="soil type"required>
+           <option value="1">Clay</option>
+           <option value="2">Sandy</option>
+           <option value="3">Loamy</option>
+           </select>
+       </div>
+       <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+   </form>
+</div>
+<div class="ui main text container segment" style="color: green">
+   {{ prediction_text4 }}  
+    </div>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css">
+  
+</head>
+<body>
+ <!-- NAVBAR
+================================================== -->
+  <body>
+    <!--<div class="navbar-wrapper">-->
+      <!--<div class="container" >-->
+
+        <nav class="navbar navbar-inverse navbar-static-top" style="background-color:#08041A; font-weight:700;color:#ffffff;" >
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Technofarmacists</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li ><a href="https://b5a2a3122f6e4ceaa3fa6e82bb77fe8e.vfs.cloud9.us-east-2.amazonaws.com/home">Home</a></li>
+                <li><a href="https://b5a2a3122f6e4ceaa3fa6e82bb77fe8e.vfs.cloud9.us-east-2.amazonaws.com/home/about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/home/comments">Question You May ask</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                  </ul>
+                </li>
+              </ul>
+                    <ul class="nav navbar-nav navbar-right" style="padding-right: 25px">
+                 
+                        <li> <a href='https://b5a2a3122f6e4ceaa3fa6e82bb77fe8e.vfs.cloud9.us-east-2.amazonaws.com/login'>Login</a></li>
+                        <li> <a href='https://b5a2a3122f6e4ceaa3fa6e82bb77fe8e.vfs.cloud9.us-east-2.amazonaws.com/register'>Sign Up</a></li>
+                     
+                      
+                
+               </ul>
+            </div>
+                <div class="collapse navbar-collapse" id="bs-nav-demo">
+
+    </div><!-- /.navbar-collapse -->
+          </div>
+        </nav>
+      <!--</div>-->
+    <!--</div>-->
+
+
+
+
+
+
+
+<div class="ui main text container segment">
+   <div class="ui huge header">Add the values for the Finding the Production</div>
+   <form class="ui form" action="{{ url_for('predict3')}}"  method="POST" >
+       <div class="field">
+           <label>Season: (for'Kharif     ':0, 'Whole Year':1, 'Autumn':2, 'Rabi':3,'Summer':4, 'Winter':5)</label>
+           <select type="text" name="season"required>
+           <option value="0">Kharif</option>
+           <option value="1">Whole Year</option>
+           <option value="2">Autumn</option>
+           <option value="3">Rabi</option>
+           <option value="4">Summer</option>
+           <option value="5">Winter</option>
+           </select>
+     </div>
+
+        <div class="field">
+           <label>Crop Name : (for 'Arecanut':0, 'Other Kharif pulses':1, 'Rice':2, 'Banana':3, 'Cashewnut':4,
+       'Coconut ':5, 'Dry ginger':6, 'Sugarcane':7, 'Sweet potato':8, 'Tapioca':9,
+       'Black pepper':10, 'Dry chillies':11, 'other oilseeds':12, 'Turmeric':13,
+       'Maize':14, 'Moong(Green Gram)':15, 'Urad':16, 'Arhar/Tur':17, 'Groundnut':18,
+       'Sunflower':19, 'Bajra':20, 'Castor seed':21, 'Cotton(lint)':22, 'Horse-gram':23,
+       'Jowar':24, 'Korra':25, 'Ragi':26, 'Tobacco':27, 'Gram':28, 'Wheat':29, 'Masoor':30,
+       'Sesamum':31, 'Linseed':32, 'Safflower':33, 'Onion':34, 'other misc. pulses':35,
+       'Samai':36, 'Small millets':37, 'Coriander':38, 'Potato':39,
+       'Other  Rabi pulses':40, 'Soyabean':41, 'Beans & Mutter(Vegetable)':42,
+       'Bhindi':43, 'Brinjal':44, 'Citrus Fruit':45, 'Cucumber':46, 'Grapes':47, 'Mango':48,
+       'Orange':49, 'other fibres':50, 'Other Fresh Fruits':51, 'Other Vegetables':52,
+       'Papaya':53, 'Pome Fruit':54, 'Tomato':55, 'Mesta':56, 'Cowpea(Lobia)':57,
+       'Lemon':58, 'Pome Granet':59, 'Sapota':60, 'Cabbage':61, 'Rapeseed &Mustard':62,
+       'Peas  (vegetable)':63, 'Niger seed':64, 'Bottle Gourd':65, 'Varagu':66,
+       'Garlic':67, 'Ginger':68, 'Oilseeds total':69, 'Pulses total':70, 'Jute':71,
+       'Peas & beans (Pulses)':72, 'Blackgram':73, 'Paddy':74, 'Pineapple':75,
+       'Barley':76, 'Sannhamp':77, 'Khesari':78, 'Guar seed':79, 'Moth':80,
+       'Other Cereals & Millets':81, 'Cond-spcs other':82, 'Turnip':83, 'Carrot':84,
+       'Redish':85, 'Arcanut (Processed)':86, 'Atcanut (Raw)':87,
+       'Cashewnut Processed':88, 'Cashewnut Raw':89, 'Cardamom':90, 'Rubber':91,
+       'Bitter Gourd':92, 'Drum Stick':93, 'Jack Fruit':94, 'Snak Guard':95, 'Tea':96,
+       'Coffee':97, 'Cauliflower':98, 'Other Citrus Fruit':99, 'Water Melon':100,
+       'Total foodgrain':101, 'Kapas':102, 'Colocosia':103, 'Lentil':104, 'Bean':105,
+       'Jobster':106, 'Perilla':107, 'Rajmash Kholar':108, 'Ricebean (nagadal)':109,
+       'Ash Gourd':110, 'Beet Root':111, 'Lab-Lab':112, 'Ribed Guard':113, 'Yam':114,
+       'Pump Kin':115, 'Apple':116, 'Peach':117, 'Pear':118, 'Plums':119, 'Litchi':120, 'Ber':121,
+       'Other Dry Fruit':122, 'Jute & mesta':123)</label>
+           <input type="text" name="crop" placeholder="Text"required >
+       </div>
+        <div class="field">
+           <label>Area: (hectacre)</label>
+           <input type="text" name="area" placeholder="Text"required >
+       </div>
+       <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+   </form>
+</div>
+<div class="ui main text container segment" style="color: green">
+   {{ prediction_text3 }}  
+    </div>
+</body>
+</html>

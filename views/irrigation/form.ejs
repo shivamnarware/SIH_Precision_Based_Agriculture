@@ -1,0 +1,42 @@
+<%- include("../partials/header") %>
+
+<div class="ui main text container segment">
+   <div class="ui huge header">Add the values for the Irrigation section</div>
+   <form class="ui form" action="/home/irrigation"   method="POST" >
+       <div class="field">
+           <label>ph</label>
+           <input type="text" name="irrigation[ph]" placeholder="Text" >
+       </div>
+        <div class="field">
+           <label>Nitrogen Content</label>
+           <input type="text" name="irrigation[nitrogen]" placeholder="Text" >
+       </div>
+        <div class="field">
+           <label>Phosphorus content</label>
+           <input type="text" name="irrigation[phosphorus]" placeholder="Text" >
+       </div>
+       <div class="field">
+           <label>organiccarbon content</label>
+           <input type="text" name="irrigation[organiccarbon]" placeholder="Text" >
+       </div>
+       <div class="field">
+           <label>particles</label>
+           <input type="text" name="irrigation[particles]" placeholder="Text" >
+       </div>
+       <div class="field">
+           <label>waterholdingcontent</label>
+           <input type="text" name="irrigation[waterholdingcontent]" placeholder="Text" >
+       </div>
+       <div class="field">
+           <label>soiltype</label>
+           <input type="text" name="irrigation[soiltype]" placeholder="Text" >
+       </div>
+             <div class="field">
+           <label>croptype</label>
+           <input type="text" name="irrigation[croptype]" placeholder="Text" >
+       </div>
+	     <input class="ui violet big basic button" type="submit">
+   </form>
+</div>
+
+<%- include("../partials/footer") %>

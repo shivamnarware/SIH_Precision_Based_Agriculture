@@ -1,0 +1,39 @@
+<%- include("../partials/header") %>
+      
+<div class="ui container">
+  <div class="ui comments">
+  <h3 class="ui dividing header">Questions</h3>
+  <a href="/home/comments/questions/new" class="ui large blue label">Add a new question</a>
+  <div class="comment">
+  <% comments.forEach(function(comment){ %>
+    <div class="content">
+      <a class="author"><%= comment.author.username %></a>
+      <div class="metadata">
+        <span class="date"><%=comment.created.toDateString()%></span>
+      </div>
+      <div class="text">
+        <%=  comment.text  %>
+      </div>
+      
+      
+   <%   comment.reply.forEach(function(reply){  %>
+      
+        <div class="metadata">
+        <span class="content"><%=reply.text%></span>
+      </div>
+      
+     <% }) %>
+         
+    
+      <div class="actions">
+        <a href="/home/comments/questions/reply/<%=comment._id%>/new" class="reply">Reply</a>
+      </div>
+    </div>
+  <% }) %>
+  </div>
+
+
+</div>
+</div>
+
+<%- include("../partials/footer") %>

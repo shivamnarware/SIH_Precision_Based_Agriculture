@@ -1,0 +1,12 @@
+<%- include("../partials/header") %>
+<div class="ui main text container segment">
+   <div class="ui huge header">Add a new comment to the PAGE</div>
+   <form class="ui form" action="/home/comments/questions"   method="POST" >
+       <div class="field">
+           <label>Title</label>
+           <input type="text" name="comment[text]" placeholder="Text" >
+       </div>
+	     <input class="ui violet big basic button" type="submit">
+   </form>
+</div>
+<%- include("../partials/footer") %>
